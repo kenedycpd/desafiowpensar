@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+<div class="row">
+	<br>
+	{% block body %}
+	    <table class="table table-hover">
+			<thead>
+				<tr>
+				    <th>Item</th>
+					<th>Produto</th>
+					<th>Quantidade</th>
+					<th>Preço Compra</th>
+					<th>Preço Medio</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+			{% for c in compras %}
+
+				<tr class="bg-success" style="color:#fff;">
+				<td>{{ c.id }}</td>
+				<td>{{ c.produto }}</td>
+				<td>{{ c.quantidade }}</td>
+				<td>{{ c.preco_compra }}</td>
+				<td>{{ c.media }}</td>
+				</tr>
+				
+			{% endfor %}
+				
+			</tbody>
+		</table>
+	
+	{% endblock body %}
+</div>
